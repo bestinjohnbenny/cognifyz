@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Layout Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    .wrapper { display: flex; gap: 20px; padding: 20px; }
+    .main-content { flex: 7; background: #e1f5fe; padding: 20px; }
+    .sidebar { flex: 3; background: #fff9c4; padding: 20px; }
+
+    @media (max-width: 768px) {
+      .wrapper { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <main class="main-content">
+      <h2>Main Content</h2>
+      <button id="colorBtn">Click to change color!</button>
+    </main>
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <p>I move below the content on mobile.</p>
+    </aside>
+  </div>
+
+  <script>
+    const btn = document.getElementById('colorBtn');
+    btn.addEventListener('click', () => {
+      btn.style.backgroundColor = 'hsl(' + Math.random() * 360 + ', 70%, 70%)';
+    });
+  </script>
+</body>
+</html>
